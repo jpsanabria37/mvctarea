@@ -1,0 +1,28 @@
+@model TipoDocumento
+<div class="container box-shadow p-5">
+    <div>
+        <h2>Eliminar tipo de documento</h2>
+    </div>
+
+    <form method="post" asp-controller="TipoDocumento" asp-action="Delete">
+        <input asp-for=Id hidden />
+    <div class="form-row">    
+        <div class="form-group col-md-6">
+            <label asp-for="Nombre">Nombre del documento</label>
+            <input type="text" class="form-control mb-3" asp-for="Nombre" disabled />            
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Descripcion">Descripción del documento</label>
+            <input type="text" class="form-control mb-3" asp-for="Descripcion" disabled />            
+        </div>
+    </div>
+        <button type="submit" class="btn btn-primary btn-lg p-2"><i class="bi bi-trash-fill"></i>Eliminar</button>
+        <a asp-controller="TipoDocumento" asp-action="Index" class="btn btn-lg btn-danger p-2">Regresar</a>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
